@@ -13,4 +13,8 @@ public class Math {
 		
 	}
 
+	public int Diff(int param) {
+		return param - 2;
+	}
+
 }
