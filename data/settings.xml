@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<levels>
+	<level name="Intro">
+		<static>
+			<object type="rect" x="50%" y="90%" multiply="1.5" />
+		</static>
+		<dynamic>
+			<object type="cube" multiply="1" />
+			<object type="cube" />
+			<object type="rect" multiply="1" />
+			<object type="triangle" multiply="1" />
+			<object type="triangle"  multiply="1"/>
+			<object type="circle" />			
+		</dynamic>
+	</level>
+	<level name="Level 2">
+		<static>
+			<object type="rect" x="50%" y="90%" />
+		</static>
+		<dynamic>
+			<object type="rect" />
+			<object type="triangle" />
+			<object type="triangle" />
+			<object type="circle" />
+			<object type="cube" />		
+		</dynamic>
+	</level>
+</levels>
