@@ -13,7 +13,7 @@ public class Math {
 		
 	}
 
-	public int MinusTwo(int param) {
+	public int MinusOne(int param) {
 		return param - 2;
 	}
 
