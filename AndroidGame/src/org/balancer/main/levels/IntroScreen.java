@@ -11,15 +11,18 @@ public class IntroScreen extends AbstractScreen {
 	public void create(AndroidGame game) {
 		super.create(game);
 		trace("Introscreen");
+		//UI Init
 		playbtn = new Button((int) Math.floor(screenWidth*0.5), (int) Math.floor(screenHeight*0.5), "Play");
 	}
 	
 	public void render() {
+		//Drawing
 		setColor();
 		batch.begin();
 		playbtn.draw(batch);
 		batch.end();
 		
+		//OnClick Event
 		if (Gdx.input.justTouched()) {
 			if (playbtn.hitTest()) {
 				this.curGame.setLevel(new LevelBuilder());

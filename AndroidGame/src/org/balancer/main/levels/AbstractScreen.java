@@ -12,8 +12,8 @@ public abstract class AbstractScreen {
 	protected SpriteBatch batch;
 	protected int mouseY;
 	protected int mouseX;
-	protected int screenHeight;
-	protected int screenWidth;
+	public static int screenHeight;
+	public static int screenWidth;
 	
 	public void trace(Object mixed) {
 		System.out.println(mixed);
