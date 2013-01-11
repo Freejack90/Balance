@@ -1,8 +1,7 @@
 package org.balancer.main.levels;
 
 import java.awt.Point;
-import java.util.Iterator;
-
+import java.util.ArrayList;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.XmlReader;
 import com.badlogic.gdx.utils.XmlReader.Element;
@@ -63,5 +62,5 @@ public class LevelManager {
 	
 	public int getCount(int type) {	return type == ObjectType.DYNAMICS ? countDyn : countStat; }
 	
-	public Iterator<ObjectType> getObjects(int type) { return map.get(type); }
+	public ArrayList<ObjectType> getObjects(int type) { return map.get(type); }
 }

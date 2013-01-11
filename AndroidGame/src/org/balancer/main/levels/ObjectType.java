@@ -25,9 +25,10 @@ public class ObjectType {
 		this.angle = angle;
 		this.pos = position;
 		this.shape = strToShape.get(type.split("_")[0]);
+
 	}
 	
-	
+
 	private static Hashtable<String, Shapes> createShape() {
 		Hashtable<String, Shapes> tmp = new Hashtable<String, Shapes>();		
 		tmp.put("cube", Shapes.CUBE);
@@ -65,5 +66,10 @@ public class ObjectType {
 	public int getAngle() {return this.angle;}
 	public String getType(){return type;}
 	public Shapes getShape() {return shape;}
+
+
+	public void setPosition(int x, int y) {
+		pos = new Point(x, y);
+	}
 	
 }

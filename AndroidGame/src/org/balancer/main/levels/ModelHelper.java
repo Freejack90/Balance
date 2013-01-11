@@ -2,7 +2,6 @@ package org.balancer.main.levels;
 
 import java.awt.Point;
 
-import org.balancer.main.levels.ObjectType.Shapes;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.MathUtils;
@@ -20,19 +19,20 @@ public class ModelHelper {
 	public static Texture map = new Texture("data/images/map.png");
 	public static float friction = 0.5f;
 	public static int density = 10;
-	public static void create(World world, ObjectType.Shapes shape, String stringType, int type, Point size, int angle,  Point position) {
-		switch (shape) {
-			case CUBE: createCube(world, size.x, stringType, type, angle, position); break;
-			case CIRCLE: createCircle(world, (float)size.x, stringType, type, angle, position); break;
-			case RECT: createRect(world, size, stringType, type, angle, position); break;
-			case TRIANGLE: createTriangle(world, (float)size.x/100, stringType, type, angle, position); break;
+	public static void create(World world, int type, ObjectType object) {
+		switch (object.getShape()) {
+			case CUBE: createCube(world, object.getSize().x, object.getType(), type, object.getAngle(), object.getPosition()); break;
+			case CIRCLE: createCircle(world, (float)object.getSize().x, object.getType(), type, object.getAngle(), object.getPosition()); break;
+			case RECT: createRect(world, object.getSize(), object.getType(), type, object.getAngle(), object.getPosition()); break;
+			case TRIANGLE: createTriangle(world, (float)object.getSize().x/100, object.getType(), type, object.getAngle(), object.getPosition()); break;
 		}
 	}
 	
 	public static void createRect(World world, Point size, String stringType, int type, int angle, Point position) {		
 		//Shape
 		PolygonShape shape = new PolygonShape();
-		shape.setAsBox(size.x/meters/2, size.y/meters/2);
+		shape.setAsBox((float)size.x/meters/2, (float)size.y/meters/2);
+		
 		//BodyDef
 		BodyDef bd = new BodyDef();		
 		bd.angle = MathUtils.degreesToRadians * (-angle);
@@ -87,7 +87,7 @@ public class ModelHelper {
 	public static void createCircle(World world, float radius, String stringType, int type, int angle, Point position){
 		
 		CircleShape shape = new CircleShape();
-		shape.setRadius(radius/meters/2);
+		shape.setRadius((float)radius/meters/2);
 		BodyDef bd = new BodyDef();
 		bd.position.set(position.x/meters, position.y/meters);
 		if(type == ObjectType.STATICS){

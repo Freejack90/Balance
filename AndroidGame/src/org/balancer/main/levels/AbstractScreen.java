@@ -44,6 +44,11 @@ public abstract class AbstractScreen {
 	public void render(){
 			mouseY = Gdx.graphics.getHeight()-Gdx.input.getY();
 			mouseX = Gdx.input.getX();
+			update();
+	}
+	
+	public void update() {
+		
 	}
 
 	abstract public void resize(int arg0, int arg1);

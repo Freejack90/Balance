@@ -1,7 +1,6 @@
 package org.balancer.main.levels;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class LevelMap {
 	private ArrayList<ObjectType> statics = new ArrayList<ObjectType>();
@@ -18,11 +17,11 @@ public class LevelMap {
 			statics.add(object);
 	}
 	
-	public Iterator<ObjectType> get(int type) {
+	public ArrayList<ObjectType> get(int type) {
 		if (type == ObjectType.DYNAMICS) 
-			return dynamics.iterator();
+			return dynamics;
 		else
-			return statics.iterator();
+			return statics;
 			
 	}
 }
